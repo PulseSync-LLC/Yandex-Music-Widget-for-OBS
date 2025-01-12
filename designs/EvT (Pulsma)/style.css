@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    font-family: Arial, sans-serif;
+    color: #fff;
+  }
+
+  .music-card {
+    position: relative;
+    width: 400px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    transition: background-color 0.5s ease;
+    background-color: #2f2f2f;
+  }
+
+  .music-card-content {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    opacity: 1;
+  }
+
+  .album-art {
+    --size: 50px;
+    width: var(--size);
+    height: var(--size);
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 10px;
+    transition: opacity 0.5s ease;
+  }
+
+  .track-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .track-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 0 3px 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  .track-artist {
+    font-size: 14px;
+    color: #ccc;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  .track-status {
+    font-size: 13px;
+    color: #999;
+  }
+
+  @keyframes slideOut {
+    0% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+  }
+  @keyframes slideIn {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  .slideOut {
+    animation: slideOut 0.5s forwards;
+  }
+  .slideIn {
+    animation: slideIn 0.5s forwards;
+  }
