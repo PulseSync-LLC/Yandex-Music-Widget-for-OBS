@@ -4,11 +4,11 @@
 [![Беларуская](https://img.shields.io/badge/Беларуская-white?style=for-the-badge)](https://github.com/Maks1mio/Yandex-Music-Widget-for-OBS/blob/main/other/by.md)
 [![Қазақша](https://img.shields.io/badge/Қазақша-white?style=for-the-badge)](https://github.com/Maks1mio/Yandex-Music-Widget-for-OBS/blob/main/other/kz.md)
 
-# Yandex Music Widget for OBS
+# Яндекс Музыка виджет для OBS
 [![Join our Discord](https://img.shields.io/discord/1227552882744754267?label=Discord&logo=discord&logoColor=white&style=for-the-badge)](https://discord.com/invite/pulsesync)
 [![Subscribe on Boosty](https://img.shields.io/badge/Boosty-Subscribe-orange?style=for-the-badge)](https://boosty.to/evt)
 
-![aTYB7VGE7H](https://github.com/user-attachments/assets/2e5a33ed-5e43-41d0-82e8-19b96067b79b)
+![safsa](https://repository-images.githubusercontent.com/915801533/829d6f0f-0207-4eda-b064-a3362d28ad2c)
 
 ## Инструкция по установке и использованию
 
@@ -19,6 +19,8 @@
 
 1. **Подключается** к нашему публичному API ([pulsesync.dev/api/v1/](https://ru-node-1.pulsesync.dev/api/v1/)), чтобы узнавать, какая композиция играет.  
 2. **Отображает** карточку с обложкой, названием трека, исполнителем, статусом (playing и т.д.).  
+
+![aTYB7VGE7H](https://github.com/user-attachments/assets/2e5a33ed-5e43-41d0-82e8-19b96067b79b)
 
 ## Как получить доступ к публичному API?
 
