@@ -1,5 +1,3 @@
-## Қазақша
-
 # Yandex Music Widget for OBS
 
 [![Біздің Discord-ға қосылыңыз](https://img.shields.io/discord/1227552882744754267?label=Discord&logo=discord&logoColor=white&style=for-the-badge)](https://discord.com/invite/pulsesync)
