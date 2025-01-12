@@ -1,5 +1,10 @@
-# Yandex Music Widget for OBS
+[![Русский](https://img.shields.io/badge/Русский-white?style=for-the-badge)](https://github.com/Maks1mio/Yandex-Music-Widget-for-OBS)
+[![English](https://img.shields.io/badge/English-white?style=for-the-badge)](#english)
+[![Українська](https://img.shields.io/badge/Українська-white?style=for-the-badge)](#українська)
+[![Беларуская](https://img.shields.io/badge/Беларуская-white?style=for-the-badge)](#беларуская)
+[![Қазақша](https://img.shields.io/badge/Қазақша-white?style=for-the-badge)](#қазақша)
 
+# Yandex Music Widget for OBS
 [![Join our Discord](https://img.shields.io/discord/1227552882744754267?label=Discord&logo=discord&logoColor=white&style=for-the-badge)](https://discord.com/invite/pulsesync)
 [![Subscribe on Boosty](https://img.shields.io/badge/Boosty-Subscribe-orange?style=for-the-badge)](https://boosty.to/evt)
 
@@ -103,4 +108,4 @@ designs/
 Если возникнут вопросы или что-то не работает — спрашивайте на Discord-сервере.
 
 ---
-**Бай бай!**  
+**Бай бай!**
