@@ -3,6 +3,8 @@
 [![Далучайцеся да нашага Discord](https://img.shields.io/discord/1227552882744754267?label=Discord&logo=discord&logoColor=white&style=for-the-badge)](https://discord.com/invite/pulsesync)
 [![Падпісацца на Boosty](https://img.shields.io/badge/Boosty-Subscribe-orange?style=for-the-badge)](https://boosty.to/evt)
 
+![aTYB7VGE7H](https://github.com/user-attachments/assets/2e5a33ed-5e43-41d0-82e8-19b96067b79b)
+
 ## Інструкцыя па ўсталёўцы і выкарыстанні
 
 Вітаем! Ніжэй апісана, як запусціць віджэт.  
