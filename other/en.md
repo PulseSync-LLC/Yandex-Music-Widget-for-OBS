@@ -3,7 +3,7 @@
 [![Join our Discord](https://img.shields.io/discord/1227552882744754267?label=Discord&logo=discord&logoColor=white&style=for-the-badge)](https://discord.com/invite/pulsesync)
 [![Subscribe on Boosty](https://img.shields.io/badge/Boosty-Subscribe-orange?style=for-the-badge)](https://boosty.to/evt)
 
-![aTYB7VGE7H](https://github.com/user-attachments/assets/2e5a33ed-5e43-41d0-82e8-19b96067b79b)
+![safsa](https://repository-images.githubusercontent.com/915801533/829d6f0f-0207-4eda-b064-a3362d28ad2c)
 
 ## Installation and Usage Instructions
 
@@ -14,6 +14,8 @@ This is a regular HTML/JS project without using Node.js or any build tools — y
 
 1. **Connects** to our public API ([pulsesync.dev/api/v1/](https://ru-node-1.pulsesync.dev/api/v1/)) to find out which track is playing.  
 2. **Displays** a card with the cover art, track name, artist, status (playing, etc.).
+
+![aTYB7VGE7H](https://github.com/user-attachments/assets/2e5a33ed-5e43-41d0-82e8-19b96067b79b)
 
 ## How to get access to the public API?
 

@@ -3,7 +3,7 @@
 [![Далучайцеся да нашага Discord](https://img.shields.io/discord/1227552882744754267?label=Discord&logo=discord&logoColor=white&style=for-the-badge)](https://discord.com/invite/pulsesync)
 [![Падпісацца на Boosty](https://img.shields.io/badge/Boosty-Subscribe-orange?style=for-the-badge)](https://boosty.to/evt)
 
-![aTYB7VGE7H](https://github.com/user-attachments/assets/2e5a33ed-5e43-41d0-82e8-19b96067b79b)
+![safsa](https://repository-images.githubusercontent.com/915801533/829d6f0f-0207-4eda-b064-a3362d28ad2c)
 
 ## Інструкцыя па ўсталёўцы і выкарыстанні
 
@@ -14,6 +14,8 @@
 
 1. **Падключаецца** да нашага публічнага API ([pulsesync.dev/api/v1/](https://ru-node-1.pulsesync.dev/api/v1/)), каб даведацца, якая кампазіцыя зараз грае.  
 2. **Адлюстроўвае** картку з абкладінкай, назвай трэка, выканаўцам, статусам (playing і інш.).
+
+![aTYB7VGE7H](https://github.com/user-attachments/assets/2e5a33ed-5e43-41d0-82e8-19b96067b79b)
 
 ## Як атрымаць доступ да публічнага API?
 

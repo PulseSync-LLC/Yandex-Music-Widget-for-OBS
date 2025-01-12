@@ -3,7 +3,7 @@
 [![Біздің Discord-ға қосылыңыз](https://img.shields.io/discord/1227552882744754267?label=Discord&logo=discord&logoColor=white&style=for-the-badge)](https://discord.com/invite/pulsesync)
 [![Boosty-де жазылыңыз](https://img.shields.io/badge/Boosty-Subscribe-orange?style=for-the-badge)](https://boosty.to/evt)
 
-![aTYB7VGE7H](https://github.com/user-attachments/assets/2e5a33ed-5e43-41d0-82e8-19b96067b79b)
+![safsa](https://repository-images.githubusercontent.com/915801533/829d6f0f-0207-4eda-b064-a3362d28ad2c)
 
 ## Орнату және пайдалану жөніндегі нұсқаулық
 
@@ -14,6 +14,8 @@
 
 1. Біздің жария API-ға ([pulsesync.dev/api/v1/](https://ru-node-1.pulsesync.dev/api/v1/)) **қосылады**, қай композиция ойналып жатқанын білу үшін.  
 2. **Қақпағын**, тректің атауын, орындаушысын, статусын (playing және т.б.) көрсететін карточканы шығарады.
+
+![aTYB7VGE7H](https://github.com/user-attachments/assets/2e5a33ed-5e43-41d0-82e8-19b96067b79b)
 
 ## Жария API-ға қалай қол жеткізуге болады?
 
