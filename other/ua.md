@@ -98,7 +98,7 @@ designs/
 ## Контакти
 
 - Наш [Discord-сервер](https://discord.com/invite/pulsesync).  
-- [Boosty](https://boosty.to/evt) для оформлення підписки ().  
+- [Boosty](https://boosty.to/evt) для оформлення підписки (Якщо будуть проблеми з оплатою пишіть нам у дискорд).  
 
 Якщо виникнуть питання або щось не працює — питайте на Discord-сервері.
 
