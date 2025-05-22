@@ -93,4 +93,4 @@ function updateCard(track) {
 }
 
 fetchTrackStatus();
-setInterval(fetchTrackStatus, 5000);
+setInterval(fetchTrackStatus, 15000);
