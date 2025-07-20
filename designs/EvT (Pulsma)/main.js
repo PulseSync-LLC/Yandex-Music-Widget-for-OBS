@@ -13,8 +13,8 @@ const cardEl = document.getElementById("music-card");
 async function fetchTrackStatus() {
   try {
     const data = await fetchTrackStatusFromApi();
-
-    if (data.ok && data.track) {
+    console.log("Полученные данные о треке:", data);
+    if (data?.track) {
       const newTrackId = data.track.realId;
 
       if (newTrackId !== oldTrackId) {
@@ -22,7 +22,7 @@ async function fetchTrackStatus() {
         animateTrackChange(data.track);
       }
     } else {
-      console.warn("Некорректные данные или ошибка авторизации");
+      console.warn("Некорректные данные");
     }
   } catch (error) {
     console.error("Ошибка при получении данных о треке:", error);
@@ -54,7 +54,10 @@ function updateCard(track) {
   albumArtEl.style.opacity = 0;
   albumArtEl.src = "default.png";
 
-  const newAlbumArt = track.albumArt;
+  let newAlbumArt = null;
+  if (track?.coverUri) {
+    newAlbumArt = `https://${track?.coverUri.replace('%%', '1000x1000')}`;
+  }
   if (newAlbumArt) {
     const tempImg = new Image();
     tempImg.crossOrigin = "anonymous";
@@ -93,4 +96,4 @@ function updateCard(track) {
 }
 
 fetchTrackStatus();
-setInterval(fetchTrackStatus, 15000);
+setInterval(fetchTrackStatus, 10000);
