@@ -13,7 +13,7 @@ const cardEl = document.getElementById("music-card");
 async function fetchTrackStatus() {
   try {
     const data = await fetchTrackStatusFromApi();
-    console.log("Полученные данные о треке:", data);
+
     if (data?.track) {
       const newTrackId = data.track.realId;
 
