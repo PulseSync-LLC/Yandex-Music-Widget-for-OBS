@@ -47,7 +47,6 @@ async function fetchTrackStatusFromApi() {
 
   console.log(`[tick] Обнаружены изменения: ${changes.join(", ")}`);
 
-  // Сохраняем новое состояние
   apiState.trackId = data.track.realId;
   apiState.status = data.status;
   apiState.lastApiPosition = apiPos;
