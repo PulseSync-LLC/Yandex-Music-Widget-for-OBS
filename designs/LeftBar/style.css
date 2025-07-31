@@ -1,0 +1,151 @@
+:root {
+  --primary: #1db954;
+  --bar-bg: #18181a;
+  --gap: 16px;
+}
+
+body {
+  margin: 0;
+  font-family: Montserrat, sans-serif;
+}
+
+.pulsma-bar {
+  width: fit-content;
+  position: fixed;
+  background: #18181ade;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 4px;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  transition: width 0.37s cubic-bezier(0.44, 1.61, 0.77, 0.99),
+    min-width 0.37s cubic-bezier(0.44, 1.61, 0.77, 0.99),
+    max-width 0.37s cubic-bezier(0.44, 1.61, 0.77, 0.99),
+    background 0.27s cubic-bezier(0.44, 1.61, 0.77, 0.99);
+}
+
+.pulsma-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap);
+  min-height: 58px;
+  padding: 12px 22px 4px 16px;
+  max-width: 100vw;
+  transition: max-width 0.38s cubic-bezier(0.44, 1.61, 0.77, 0.99),
+    gap 0.3s cubic-bezier(0.5, 1.7, 0.6, 1);
+  width: auto;
+}
+
+.pulsma-art {
+  width: 46px;
+  height: 46px;
+  border-radius: 9px;
+  object-fit: cover;
+  box-shadow: 0 0 0px 2px var(--primary);
+  background: #242424;
+  flex-shrink: 0;
+  transition: box-shadow 0.33s;
+}
+
+.pulsma-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  position: relative;
+  transition: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.pulsma-title,
+.pulsma-artist {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 370px;
+  transition: opacity 0.23s, transform 0.27s, color 0.3s;
+  text-shadow: 1px 1px 4px #0009;
+  line-height: 1.22;
+}
+
+.pulsma-title {
+  font-size: 17.5px;
+  font-weight: 700;
+  margin-bottom: 1px;
+}
+
+.pulsma-artist {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #e7e7e7cc;
+}
+
+.fade-out {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pulsma-art.anim-out {
+  animation: art-out 0.38s cubic-bezier(0.31, 1.52, 0.7, 0.99) forwards;
+}
+.pulsma-art.anim-in {
+  animation: art-in 0.41s cubic-bezier(0.31, 1.52, 0.7, 0.99) forwards;
+}
+@keyframes art-out {
+  0% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  90% {
+    transform: scale(1.22) rotate(23deg);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(0) rotate(70deg);
+    opacity: 0;
+  }
+}
+@keyframes art-in {
+  0% {
+    transform: scale(0) rotate(-70deg);
+    opacity: 0;
+  }
+  35% {
+    transform: scale(1.22) rotate(-13deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.pulsma-progress-bar {
+  width: -webkit-fill-available;
+  height: 4px;
+  background: #353535;
+  border-radius: 2px;
+  overflow: hidden;
+  margin: 0;
+}
+
+.pulsma-progress {
+  height: 100%;
+  background: var(--primary);
+  width: 0%;
+  border-radius: 2px;
+  transition: width 0.13s linear, background 0.25s;
+  box-shadow: 0 0 6px var(--primary);
+}

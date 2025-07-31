@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Battlebeats</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="battlebeats-card" id="battlebeats-card">
+      <img
+        id="bb-albumArt"
+        class="bb-album-art"
+        src="default.png"
+        alt="Album Art"
+      />
+      <div class="bb-info">
+        <div id="bb-trackTitle" class="bb-title">No track playing</div>
+        <div id="bb-trackArtist" class="bb-artist">Select music to start</div>
+        <div class="bb-progress-container">
+          <div class="bb-progress-bar">
+            <div id="bb-progress" class="bb-progress"></div>
+          </div>
+          <div class="bb-time">
+            <span id="bb-currentTime">0:00</span>
+            <span id="bb-duration">0:00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../../api.js"></script>
+    <script src="../../scripts/color.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yandex Music Widgets — Превью всех виджетов</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --primary: #4caf50;
+        --primary-hover: #6fbf73;
+        --bg: #0d1213;
+        --card-bg: #1b2627;
+        --card-hover: #2b4144;
+        --text: #e2e7e7;
+        --text-secondary: #b5c0c2;
+        --accent: #4deaff;
+        --code-bg: #29383a;
+      }
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Inter", sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        min-height: 100vh;
+      }
+      .container {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      header {
+        background: linear-gradient(135deg, #161e1f 0%, #172122 100%);
+        padding: 30px 0;
+        margin-bottom: 50px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      h1 {
+        text-align: center;
+        font-weight: 700;
+        font-size: 2.8rem;
+        color: #ffffff;
+        margin: 0;
+        letter-spacing: -0.02em;
+        background: linear-gradient(to right, #4caf50, #4deaff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        position: relative;
+      }
+      h1::after {
+        content: "";
+        display: block;
+        width: 60px;
+        height: 4px;
+        background: linear-gradient(to right, #4caf50, #4deaff);
+        margin: 15px auto 0;
+        border-radius: 2px;
+      }
+      .widgets-list {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin: 50px 0;
+      }
+      .widget-card {
+        background: var(--card-bg);
+        border-radius: 16px;
+        padding: 25px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        max-width: none;
+      }
+      .widget-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(to right, var(--primary), var(--accent));
+      }
+      .widget-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+        background: var(--card-hover);
+      }
+      .widget-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #ffffff;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .widget-title i {
+        color: var(--primary);
+        font-size: 1.3rem;
+      }
+      .widget-desc {
+        color: var(--text-secondary);
+        font-size: 1rem;
+        margin-bottom: 20px;
+        line-height: 1.6;
+      }
+      .widget-card iframe {
+        border: none;
+        width: 100%;
+        border-radius: 10px;
+        background: #101718;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        margin-bottom: 20px;
+        transition: all 0.3s ease;
+      }
+      .widget-card:hover iframe {
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+      }
+      .widget-links {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .widget-links a {
+        color: white;
+        text-decoration: none;
+        padding: 8px 15px;
+        background: rgba(76, 175, 80, 0.15);
+        border-radius: 6px;
+        transition: all 0.2s ease;
+        font-size: 0.85rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        border: 1px solid rgba(76, 175, 80, 0.3);
+      }
+      .widget-links a:hover {
+        background: rgba(76, 175, 80, 0.3);
+        transform: translateY(-2px);
+      }
+      .widget-links a i {
+        font-size: 0.8rem;
+      }
+      .tag {
+        display: inline-block;
+        padding: 4px 8px;
+        background: rgba(124, 77, 255, 0.15);
+        color: #b388ff;
+        border-radius: 4px;
+        font-size: 0.7rem;
+        font-weight: 600;
+        margin-left: 8px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      @media (max-width: 768px) {
+        .widgets-list {
+          flex-direction: column;
+        }
+        h1 {
+          font-size: 2.2rem;
+        }
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .widget-card {
+        animation: fadeIn 0.6s ease forwards;
+        opacity: 0;
+      }
+      .widget-card:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      .widget-card:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .widget-card:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+      .widget-card:nth-child(4) {
+        animation-delay: 0.4s;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>Yandex Music Widgets</h1>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="widgets-list">
+        <div class="widget-card">
+          <div class="widget-title">
+            <i class="fas fa-wave-square"></i>
+            Pulsma Bar
+          </div>
+          <div class="widget-desc">
+            Анимированный музыкальный бар с автоцветом, плавным resize и
+            переходами. Современный стиль для ваших плееров с поддержкой темной
+            и светлой темы.
+          </div>
+          <iframe src="designs/EvT (Pulsma)/index.html"></iframe>
+          <div class="widget-links">
+            <a href="designs/EvT (Pulsma)/index.html" target="_blank">
+              <i class="fas fa-external-link-alt"></i> Демо
+            </a>
+            <a href="designs/EvT (Pulsma)/style.css" target="_blank">
+              <i class="fab fa-css3-alt"></i> CSS
+            </a>
+            <a href="designs/EvT (Pulsma)/main.js" target="_blank">
+              <i class="fab fa-js"></i> JavaScript
+            </a>
+          </div>
+        </div>
+
+        <div class="widget-card">
+          <div class="widget-title">
+            <i class="fas fa-compact-disc"></i>
+            Battlebeats Classic Card <span class="tag">New</span>
+          </div>
+          <div class="widget-desc">
+            Компактная карточка с прогресс-баром, альбом-артом и поддержкой
+            цветового автодетекта. Идеально для минималистичных интерфейсов.
+          </div>
+          <iframe src="designs/Battlebeats/index.html"></iframe>
+          <div class="widget-links">
+            <a href="designs/Battlebeats/index.html" target="_blank">
+              <i class="fas fa-external-link-alt"></i> Демо
+            </a>
+            <a href="designs/Battlebeats/style.css" target="_blank">
+              <i class="fab fa-css3-alt"></i> CSS
+            </a>
+            <a href="designs/Battlebeats/main.js" target="_blank">
+              <i class="fab fa-js"></i> JavaScript
+            </a>
+          </div>
+        </div>
+
+        <div class="widget-card">
+          <div class="widget-title">
+            <i class="fas fa-align-left"></i>
+            LeftBar <span class="tag">Minimal</span>
+          </div>
+          <div class="widget-desc">
+            Минималистичный левый сайдбар для музыки с компактным отображением
+            информации и плавными анимациями.
+          </div>
+          <iframe src="designs/LeftBar/index.html"></iframe>
+          <div class="widget-links">
+            <a href="designs/LeftBar/index.html" target="_blank">
+              <i class="fas fa-external-link-alt"></i> Демо
+            </a>
+            <a href="designs/LeftBar/style.css" target="_blank">
+              <i class="fab fa-css3-alt"></i> CSS
+            </a>
+            <a href="designs/LeftBar/main.js" target="_blank">
+              <i class="fab fa-js"></i> JavaScript
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -68,7 +68,7 @@ function updateCard(track) {
       }, 50);
 
       try {
-        const color = getDarkenedColorFromImage(tempImg);
+        const color = getDarkenedColorFromImage(tempImg, 40);
         cardEl.style.backgroundColor = color;
       } catch (err) {
         console.warn("Ошибка при getImageData():", err);
@@ -96,4 +96,4 @@ function updateCard(track) {
 }
 
 fetchTrackStatus();
-setInterval(fetchTrackStatus, 10000);
+setInterval(fetchTrackStatus, 1000);
