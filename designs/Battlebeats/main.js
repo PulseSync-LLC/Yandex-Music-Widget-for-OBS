@@ -11,6 +11,9 @@ const el = {
   durT: document.getElementById("bb-duration"),
 };
 
+const card = document.getElementById("battlebeats-card");
+let hideTimer = null;
+
 let state = {
   trackId: null,
   status: null,
@@ -67,6 +70,28 @@ function apply(data) {
   state.position = data.progress.position;
   render(state.position, state.duration);
   state.status = data.status;
+
+  if (data.status === "playing") {
+    if (hideTimer) {
+      clearTimeout(hideTimer);
+      hideTimer = null;
+    }
+    card.classList.remove("hidden");
+  } else if (data.status === "pause" || data.status === "paused") {
+    if (!hideTimer) {
+      hideTimer = setTimeout(() => {
+        card.classList.add("hidden");
+        hideTimer = null;
+      }, 5000);
+    }
+  } else {
+    card.classList.add("hidden");
+    if (hideTimer) {
+      clearTimeout(hideTimer);
+      hideTimer = null;
+    }
+  }
+
   if (data.status === "playing") {
     startSmooth();
   } else {
