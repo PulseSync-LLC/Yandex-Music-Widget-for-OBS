@@ -9,12 +9,18 @@ body {
   .music-card {
     position: relative;
     width: 400px;
-    margin: 20px auto;
+    margin: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     overflow: hidden;
-    transition: background-color 0.5s ease;
+    transition: background-color 0.5s ease, width 0.3s ease;
     background-color: #2f2f2f;
+  }
+
+  .music-card.auto-size {
+    width: fit-content;
+    min-width: 200px;
+    max-width: 100%;
   }
 
   .music-card-content {

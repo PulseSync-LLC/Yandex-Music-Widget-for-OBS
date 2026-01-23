@@ -2,6 +2,18 @@ async function fetchStatus() {
   return await window.fetchTrackStatusFromApi();
 }
 
+function getURLParams() {
+  const urlParams = new URLSearchParams(window.location.search);
+  
+  const position = urlParams.get("position") || "top-left";
+  const offsetX = parseFloat(urlParams.get("offsetX")) || 25;
+  const offsetY = parseFloat(urlParams.get("offsetY")) || 25;
+  
+  return { position, offsetX, offsetY };
+}
+
+const { position, offsetX, offsetY } = getURLParams();
+
 const el = {
   art: document.getElementById("pulsma-art"),
   title: document.getElementById("pulsma-title"),
@@ -10,6 +22,47 @@ const el = {
   row: document.getElementById("pulsma-row"),
   bar: document.querySelector(".pulsma-bar"),
 };
+
+function applyPosition() {
+  el.bar.style.position = "fixed";
+  el.bar.style.margin = "0";
+  el.bar.style.zIndex = "9999";
+  el.bar.style.transform = "";
+  el.bar.style.top = "";
+  el.bar.style.bottom = "";
+  el.bar.style.left = "";
+  el.bar.style.right = "";
+
+  switch (position) {
+    case "top-left":
+      el.bar.style.top = `${offsetY}px`;
+      el.bar.style.left = `${offsetX}px`;
+      break;
+    case "top-right":
+      el.bar.style.top = `${offsetY}px`;
+      el.bar.style.right = `${offsetX}px`;
+      break;
+    case "bottom-left":
+      el.bar.style.bottom = `${offsetY}px`;
+      el.bar.style.left = `${offsetX}px`;
+      break;
+    case "bottom-right":
+      el.bar.style.bottom = `${offsetY}px`;
+      el.bar.style.right = `${offsetX}px`;
+      break;
+    case "center":
+      el.bar.style.top = `calc(50% + ${offsetY}px)`;
+      el.bar.style.left = `calc(50% + ${offsetX}px)`;
+      el.bar.style.transform = "translate(-50%, -50%)";
+      break;
+    default:
+      el.bar.style.top = `${offsetY}px`;
+      el.bar.style.left = `${offsetX}px`;
+      break;
+  }
+}
+
+applyPosition();
 
 let state = {
   trackId: null,

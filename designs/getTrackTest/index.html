@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get Track Test - Полная информация</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="track-info-container" id="container">
+      <div class="header">
+        <h1>🎵 Полная информация о треке</h1>
+        <div class="status-badge" id="statusBadge">
+          <span id="statusText">Загрузка...</span>
+        </div>
+      </div>
+
+      <div class="content-grid">
+        <div class="card current-track">
+          <div class="card-header">
+            <h2>📀 Текущий трек</h2>
+          </div>
+          <div class="track-main">
+            <img id="currentCover" src="default.png" alt="Cover" class="cover-image">
+            <div class="track-details">
+              <div class="track-title" id="currentTitle">-</div>
+              <div class="track-artist" id="currentArtist">-</div>
+              <div class="track-album" id="currentAlbum">-</div>
+              <div class="track-id">ID: <span id="currentId">-</span></div>
+            </div>
+          </div>
+          <div class="track-meta">
+            <div class="meta-item">
+              <span class="meta-label">Длительность:</span>
+              <span class="meta-value" id="currentDuration">-</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Год:</span>
+              <span class="meta-value" id="currentYear">-</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Жанр:</span>
+              <span class="meta-value" id="currentGenre">-</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Тип:</span>
+              <span class="meta-value" id="currentType">-</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card progress-card">
+          <div class="card-header">
+            <h2>⏱ Прогресс</h2>
+          </div>
+          <div class="progress-info">
+            <div class="progress-bar-container">
+              <div class="progress-bar" id="progressBar"></div>
+            </div>
+            <div class="progress-times">
+              <span id="currentTime">0:00</span>
+              <span id="totalTime">0:00</span>
+            </div>
+            <div class="progress-details">
+              <div class="detail-row">
+                <span>Позиция:</span>
+                <span id="progressPosition">-</span>
+              </div>
+              <div class="detail-row">
+                <span>Загружено:</span>
+                <span id="progressLoaded">-</span>
+              </div>
+              <div class="detail-row">
+                <span>Буфер:</span>
+                <span id="progressBuffered">-</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card artists-card">
+          <div class="card-header">
+            <h2>👤 Исполнители</h2>
+          </div>
+          <div class="artists-list" id="artistsList"></div>
+        </div>
+
+        <div class="card albums-card">
+          <div class="card-header">
+            <h2>💿 Альбомы</h2>
+          </div>
+          <div class="albums-list" id="albumsList"></div>
+        </div>
+
+        <div class="card actions-card">
+          <div class="card-header">
+            <h2>⚙️ Действия</h2>
+          </div>
+          <div class="actions-grid">
+            <div class="action-item">
+              <span class="action-label">Назад:</span>
+              <span class="action-value" id="canMoveBackward">-</span>
+            </div>
+            <div class="action-item">
+              <span class="action-label">Вперёд:</span>
+              <span class="action-value" id="canMoveForward">-</span>
+            </div>
+            <div class="action-item">
+              <span class="action-label">Повтор:</span>
+              <span class="action-value" id="repeatMode">-</span>
+            </div>
+            <div class="action-item">
+              <span class="action-label">Перемешать:</span>
+              <span class="action-value" id="shuffleMode">-</span>
+            </div>
+            <div class="action-item">
+              <span class="action-label">Лайк:</span>
+              <span class="action-value" id="isLiked">-</span>
+            </div>
+            <div class="action-item">
+              <span class="action-label">Дизлайк:</span>
+              <span class="action-value" id="isDisliked">-</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card prev-track">
+          <div class="card-header">
+            <h2>⏮ Предыдущий трек</h2>
+          </div>
+          <div class="track-preview">
+            <img id="prevCover" src="default.png" alt="Previous" class="preview-cover">
+            <div class="preview-info">
+              <div class="preview-title" id="prevTitle">-</div>
+              <div class="preview-artist" id="prevArtist">-</div>
+              <div class="preview-duration">⏱ <span id="prevDuration">-</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card next-track">
+          <div class="card-header">
+            <h2>⏭ Следующий трек</h2>
+          </div>
+          <div class="track-preview">
+            <img id="nextCover" src="default.png" alt="Next" class="preview-cover">
+            <div class="preview-info">
+              <div class="preview-title" id="nextTitle">-</div>
+              <div class="preview-artist" id="nextArtist">-</div>
+              <div class="preview-duration">⏱ <span id="nextDuration">-</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card colors-card">
+          <div class="card-header">
+            <h2>🎨 Цвета</h2>
+          </div>
+          <div class="colors-grid" id="colorsGrid"></div>
+        </div>
+
+        <div class="card stats-card">
+          <div class="card-header">
+            <h2>📊 Статистика</h2>
+          </div>
+          <div class="stats-list" id="statsList"></div>
+        </div>
+
+        <div class="card tech-card">
+          <div class="card-header">
+            <h2>🔧 Техническая информация</h2>
+          </div>
+          <div class="tech-list" id="techList"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../../api.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

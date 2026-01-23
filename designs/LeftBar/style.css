@@ -19,12 +19,16 @@ body {
   align-items: center;
   border-radius: 4px;
   overflow: hidden;
-  top: 0;
-  left: 0;
+  margin: 0;
   transition: width 0.37s cubic-bezier(0.44, 1.61, 0.77, 0.99),
     min-width 0.37s cubic-bezier(0.44, 1.61, 0.77, 0.99),
     max-width 0.37s cubic-bezier(0.44, 1.61, 0.77, 0.99),
-    background 0.27s cubic-bezier(0.44, 1.61, 0.77, 0.99);
+    background 0.27s cubic-bezier(0.44, 1.61, 0.77, 0.99),
+    top 0.3s ease,
+    left 0.3s ease,
+    right 0.3s ease,
+    bottom 0.3s ease,
+    transform 0.3s ease;
 }
 
 .pulsma-row {

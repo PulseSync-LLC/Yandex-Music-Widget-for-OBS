@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Strofi - Карусель</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="strofi-container" id="strofiContainer">
+      <div class="progress-ring" aria-hidden="true">
+        <svg class="progress-svg" width="52" height="52" viewBox="0 0 52 52">
+          <circle class="progress-bg" cx="26" cy="26" r="22"></circle>
+          <circle class="progress-bar" cx="26" cy="26" r="22"></circle>
+        </svg>
+      </div>
+      <div class="carousel-wrapper">
+        <div class="carousel-track" id="carouselTrack">
+          <div class="carousel-item active" id="currentItem">
+            <img id="currentImage" src="default.png" alt="Album Art" />
+          </div>
+          <div class="carousel-item next" id="nextItem">
+            <img id="nextImage" src="default.png" alt="Album Art" />
+          </div>
+        </div>
+        <div class="track-info-overlay">
+          <div class="track-title" id="trackTitle"></div>
+          <div class="track-artist" id="trackArtist"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../../api.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

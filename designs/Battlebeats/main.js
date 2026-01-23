@@ -2,6 +2,18 @@ async function fetchStatus() {
   return await window.fetchTrackStatusFromApi();
 }
 
+function getURLParams() {
+  const urlParams = new URLSearchParams(window.location.search);
+  
+  const position = urlParams.get("position") || "top-left";
+  const offsetX = parseFloat(urlParams.get("offsetX")) || 25;
+  const offsetY = parseFloat(urlParams.get("offsetY")) || 25;
+  
+  return { position, offsetX, offsetY };
+}
+
+const { position, offsetX, offsetY } = getURLParams();
+
 const el = {
   art: document.getElementById("bb-albumArt"),
   title: document.getElementById("bb-trackTitle"),
@@ -13,6 +25,47 @@ const el = {
 
 const card = document.getElementById("battlebeats-card");
 let hideTimer = null;
+
+function applyPosition() {
+  card.style.position = "fixed";
+  card.style.margin = "0";
+  card.style.zIndex = "9999";
+  card.style.transform = "";
+  card.style.top = "";
+  card.style.bottom = "";
+  card.style.left = "";
+  card.style.right = "";
+
+  switch (position) {
+    case "top-left":
+      card.style.top = `${offsetY}px`;
+      card.style.left = `${offsetX}px`;
+      break;
+    case "top-right":
+      card.style.top = `${offsetY}px`;
+      card.style.right = `${offsetX}px`;
+      break;
+    case "bottom-left":
+      card.style.bottom = `${offsetY}px`;
+      card.style.left = `${offsetX}px`;
+      break;
+    case "bottom-right":
+      card.style.bottom = `${offsetY}px`;
+      card.style.right = `${offsetX}px`;
+      break;
+    case "center":
+      card.style.top = `calc(50% + ${offsetY}px)`;
+      card.style.left = `calc(50% + ${offsetX}px)`;
+      card.style.transform = "translate(-50%, -50%)";
+      break;
+    default:
+      card.style.top = `${offsetY}px`;
+      card.style.left = `${offsetX}px`;
+      break;
+  }
+}
+
+applyPosition();
 
 let state = {
   trackId: null,
