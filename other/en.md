@@ -44,12 +44,10 @@ This is a collection of beautiful widgets for OBS Studio that display informatio
    - Give it a name, for example: "Yandex Music"
 
 3. **Specify the widget path**
-   - In Browser Source settings, find the **"Local file"** field
-   - Click the **"Browse"** button
-   - Find the widgets folder (for example: `C:\{your path}\Yandex-Music-Widget-for-OBS\designs\`)
-   - Select the folder with the desired widget (for example: `EvT (Pulsma)`)
-   - Open the `index.html` file
-   - Or copy the path from the preview page (`preview.html`) — there's a "Copy path" button there
+   - In Browser Source settings, leave **"Local file"** unchecked
+   - On the preview page (`preview.html`), click "Copy path" for the desired widget
+   - Paste the copied address into the **"URL"** field
+   - The address must start with `file:///` and point to `index.html`, for example: `file:///C:/Project/designs/EvT (Pulsma)/index.html`
 
 4. **Adjust the size**
    - In Browser Source settings, specify the width and height

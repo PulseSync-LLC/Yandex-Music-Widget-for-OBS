@@ -891,9 +891,10 @@
                 </li>
                 <li>
                   <strong>Добавьте виджет в OBS</strong> — откройте OBS Studio,
-                  добавьте Browser Source и укажите путь к файлу
-                  <code>index.html</code> выбранного виджета. Используйте кнопку
-                  "Копировать путь" для удобства.
+                  добавьте Browser Source и оставьте «Локальный файл»
+                  (Local file) выключенным. Нажмите «Копировать путь» у нужного
+                  виджета и вставьте адрес <code>file:///.../index.html</code>
+                  в поле «Ссылка» (URL).
                 </li>
                 <li>
                   <strong>Настройте размер</strong> — отрегулируйте размер
@@ -1643,7 +1644,7 @@
         }
 
         // Normalize path separators
-        filePath = filePath.replace(/\\/g, "/").replace(/\/\//g, "/");
+        filePath = filePath.replace(/\\/g, "/");
 
         // Copy to clipboard
         navigator.clipboard
