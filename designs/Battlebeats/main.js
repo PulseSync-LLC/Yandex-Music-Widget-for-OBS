@@ -25,6 +25,12 @@ const el = {
 
 const card = document.getElementById("battlebeats-card");
 let hideTimer = null;
+const isPreview = window.self !== window.top;
+
+// В превью оставляем заглушку, в OBS стартуем скрытыми до первого трека
+if (isPreview) {
+  card.classList.remove("hidden");
+}
 
 function applyPosition() {
   card.style.position = "fixed";
@@ -167,15 +173,22 @@ function updateProgressColor() {
 }
 
 async function tick() {
-  const data = await fetchStatus();
-  if (!data) return;
-  apply(data);
+  try {
+    const data = await fetchStatus();
+    if (!data) return;
+    apply(data);
+  } catch (err) {
+    console.warn("[battlebeats] PulseSync недоступен:", err);
+  }
 }
 
 (async () => {
-  const first = await fetchStatus();
-  if (first) {
-    apply(first);
+  try {
+    const first = await fetchStatus();
+    if (first) apply(first);
+  } catch (err) {
+    console.warn("[battlebeats] PulseSync недоступен на старте:", err);
+  } finally {
+    state.poll = setInterval(tick, 1000);
   }
-  state.poll = setInterval(tick, 1000);
 })();
